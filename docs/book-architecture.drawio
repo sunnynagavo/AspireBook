@@ -1,0 +1,143 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0" version="24.7.8">
+  <diagram name="Page-1" id="nyJFtBuTguaA6lM-stZ1">
+    <mxGraphModel dx="1380" dy="1015" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-1" value="React Frontend" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Domains.svg;" vertex="1" parent="1">
+          <mxGeometry x="170" y="343" width="68" height="55.00000000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-2" value="DAB" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/other/Web_App_Database.svg;" vertex="1" parent="1">
+          <mxGeometry x="690" y="330" width="68" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-3" value="Warehouse" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_database;" vertex="1" parent="1">
+          <mxGeometry x="870" y="330" width="37.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-4" value="Orders" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.sql_database;" vertex="1" parent="1">
+          <mxGeometry x="870" y="510" width="37.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-6" value="DAB" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/other/Web_App_Database.svg;" vertex="1" parent="1">
+          <mxGeometry x="690" y="510" width="68" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.067;entryY=0.68;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-2" target="KH6GMcjSC4JyQ0gU4zDp-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.048;entryY=0.696;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-6" target="KH6GMcjSC4JyQ0gU4zDp-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-11" value="Create Order API" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;labelPosition=center;verticalLabelPosition=top;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="398" y="518" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.056;entryY=0.571;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-11" target="KH6GMcjSC4JyQ0gU4zDp-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-21" value="Creates Order in DB&lt;div&gt;with Status Pending&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KH6GMcjSC4JyQ0gU4zDp-15">
+          <mxGeometry x="-0.1666" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-17" target="KH6GMcjSC4JyQ0gU4zDp-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-20" value="Updates Order Status&lt;div&gt;to Processing&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KH6GMcjSC4JyQ0gU4zDp-18">
+          <mxGeometry x="-0.3069" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-17" value="Process Payment API" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;" vertex="1" parent="1">
+          <mxGeometry x="398" y="760" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-24" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/Service_Bus.svg;" vertex="1" parent="1">
+          <mxGeometry x="390" y="640" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.55;entryY=0.107;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-11" target="KH6GMcjSC4JyQ0gU4zDp-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-30" value="Queues Process&lt;br&gt;Payment Request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KH6GMcjSC4JyQ0gU4zDp-28">
+          <mxGeometry x="-0.1886" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.437;entryY=0.053;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-24" target="KH6GMcjSC4JyQ0gU4zDp-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-32" value="Warehouse API" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;labelPosition=center;verticalLabelPosition=top;verticalAlign=bottom;" vertex="1" parent="1">
+          <mxGeometry x="398" y="338" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.07;entryY=0.533;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-1" target="KH6GMcjSC4JyQ0gU4zDp-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-35" value="Requests&lt;br&gt;Warehouse Status" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KH6GMcjSC4JyQ0gU4zDp-34">
+          <mxGeometry x="0.0889" y="-8" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.103;entryY=0.565;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-32" target="KH6GMcjSC4JyQ0gU4zDp-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-38" value="Reads Warehouse&lt;br&gt;Status" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KH6GMcjSC4JyQ0gU4zDp-37">
+          <mxGeometry x="-0.0343" y="-6" relative="1" as="geometry">
+            <mxPoint x="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.432;entryY=-0.024;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-32" target="KH6GMcjSC4JyQ0gU4zDp-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="520" y="368" />
+              <mxPoint x="520" y="480" />
+              <mxPoint x="719" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-40" value="Check for&amp;nbsp;&lt;div&gt;Pending Orders&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KH6GMcjSC4JyQ0gU4zDp-39">
+          <mxGeometry x="0.1748" y="5" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-41" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/Service_Bus.svg;" vertex="1" parent="1">
+          <mxGeometry x="394" y="900" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.503;entryY=0.02;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-17" target="KH6GMcjSC4JyQ0gU4zDp-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-43" value="Queues Processing&lt;br&gt;Order Request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KH6GMcjSC4JyQ0gU4zDp-42">
+          <mxGeometry x="-0.2629" y="-3" relative="1" as="geometry">
+            <mxPoint x="-1" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-45" target="KH6GMcjSC4JyQ0gU4zDp-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-45" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/Service_Bus.svg;" vertex="1" parent="1">
+          <mxGeometry x="250" y="518" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.021;entryY=0.467;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-1" target="KH6GMcjSC4JyQ0gU4zDp-45">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="546" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-49" value="Queues a new&lt;div&gt;Order request&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KH6GMcjSC4JyQ0gU4zDp-48">
+          <mxGeometry x="-0.3582" y="-8" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-53" value="Process Payment API" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;" vertex="1" parent="1">
+          <mxGeometry x="398" y="1000" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-41" target="KH6GMcjSC4JyQ0gU4zDp-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.491;entryY=1.012;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-53" target="KH6GMcjSC4JyQ0gU4zDp-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-56" value="Updates Order Status&lt;div&gt;to Processed&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KH6GMcjSC4JyQ0gU4zDp-55">
+          <mxGeometry x="-0.6014" y="7" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
