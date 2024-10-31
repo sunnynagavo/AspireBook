@@ -123,7 +123,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-53" value="Process Payment API" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;" vertex="1" parent="1">
+        <mxCell id="KH6GMcjSC4JyQ0gU4zDp-53" value="Shipping API" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;" vertex="1" parent="1">
           <mxGeometry x="398" y="1000" width="60" height="60" as="geometry" />
         </mxCell>
         <mxCell id="KH6GMcjSC4JyQ0gU4zDp-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KH6GMcjSC4JyQ0gU4zDp-41" target="KH6GMcjSC4JyQ0gU4zDp-53">
