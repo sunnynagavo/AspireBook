@@ -7,7 +7,7 @@ This is the repo for the architecture developed in the .NET Aspire Book, written
 The application developed in this book is an e-shop leveraging a microservices architecture. The application is composed of the following services:
 
 - **Frontend**: UI is Built using React
-- **Warehouse API**: .NET Core - when a request is made to the warehouse API, it will read the warehouse status from the warehouse and the current pending orders from the order database. It will make sure to remove items coming from the pending orders from the available stock in the warehouse.
+- **Warehouse API**: .NET - when a request is made to the warehouse API, it will read the warehouse status from the warehouse and the current pending orders from the order database. It will make sure to remove items coming from the pending orders from the available stock in the warehouse.
 - **Create Order API**: golang - when a request is made to the create order API, it will create a new order in the order database and set it to pending.
 - **Paymment API**: python - when a request is made to the payment API, it will set the order status to processing.
 - **Shipping API**: node.js - when a request is made to the shipping API, it will set the order status to completed.
