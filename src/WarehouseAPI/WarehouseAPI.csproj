@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Aspire-Orchestration\Eshop.ServiceDefaults\Eshop.ServiceDefaults.csproj" />
   </ItemGroup>
 

@@ -8,6 +8,10 @@ namespace WarehouseAPI
             var builder = WebApplication.CreateBuilder(args);
             builder.AddServiceDefaults();
 
+            var baseUrlHttp = builder.Configuration.GetValue<string>("DabConfig:BaseUrlHttp");
+
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(baseUrlHttp) });
+
             // Add services to the container.
 
             builder.Services.AddControllers();
