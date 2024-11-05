@@ -6,7 +6,7 @@
     "runtime": {
       "rest": {
         "path": "/api",
-        "port": 5100
+        "port": 5001
       },
       "graphql": {
         "path": "/graphql"
