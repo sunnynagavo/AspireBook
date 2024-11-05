@@ -1,0 +1,50 @@
+{
+    "data-source": {
+      "database-type": "mssql",
+      "connection-string": "Server=tcp:aspireorder.database.windows.net,1433;Initial Catalog=WarehouseDB;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Authentication='Active Directory Default';"
+    },
+    "runtime": {
+      "rest": {
+        "path": "/api"
+      },
+      "graphql": {
+        "path": "/graphql"
+      }
+    },
+    "entities": {
+      "WarehouseItems": {
+        "source": "WarehouseItems",
+        "permissions": [
+          {
+            "role": "anonymous",
+            "actions": [
+              "create",
+              "read",
+              "update",
+              "delete"
+            ]
+          }
+        ],
+        "rest": {
+          "path": "/WarehouseItems"
+        }
+      },
+      "Orders": {
+        "source": "Orders",
+        "permissions": [
+          {
+            "role": "anonymous",
+            "actions": [
+              "create",
+              "read",
+              "update",
+              "delete"
+            ]
+          }
+        ],
+        "rest": {
+          "path": "/Orders"
+        }
+      }
+    }
+  }
