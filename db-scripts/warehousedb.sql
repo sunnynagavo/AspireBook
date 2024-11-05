@@ -1,7 +1,12 @@
 -- SQL script to create the Warehouse database and table
-CREATE DATABASE WarehouseDB;
+USE [master]
+GO
 
-USE WarehouseDB;
+CREATE DATABASE [WarehouseDB]
+GO
+
+USE [WarehouseDB]
+GO
 
 -- create warehouseitems table
 CREATE TABLE WarehouseItems (
@@ -10,12 +15,6 @@ CREATE TABLE WarehouseItems (
     Stock INT NOT NULL,
     LastUpdated DATETIME DEFAULT GETDATE()
 );
-
--- Insert sample data into warehouseitems
-INSERT INTO WarehouseItems (ItemName, Stock) VALUES 
-('Laptop', 50),
-('Smartphone', 100),
-('Tablet', 75);
 
 -- create orders table
 CREATE TABLE Orders (
@@ -38,3 +37,9 @@ SELECT 'John Doe', ItemID, GETDATE(), GETDATE(), 10, 'Processing'
 FROM dbo.WarehouseItems
 WHERE ItemName = 'Tablet'
 ;
+
+-- Insert sample data into warehouseitems
+INSERT INTO WarehouseItems (ItemName, Stock) VALUES 
+('Laptop', 50),
+('Smartphone', 100),
+('Tablet', 75);
