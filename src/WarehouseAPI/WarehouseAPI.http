@@ -1,6 +1,4 @@
-@WarehouseAPI_HostAddress = http://localhost:5108
+@WarehouseAPI_HostAddress = https://localhost:7262
 
-GET {{WarehouseAPI_HostAddress}}/weatherforecast/
+GET {{WarehouseAPI_HostAddress}}/api/warehousestatus
 Accept: application/json
-
-###

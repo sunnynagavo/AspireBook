@@ -8,6 +8,8 @@
       <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
       <PackageVersion Include="Aspire.Hosting.NodeJS" Version="$(AspireVersion)" />
       <PackageVersion Include="Aspire.Hosting.SqlServer" Version="$(AspireVersion)" />
+      <PackageVersion Include="CommunityToolkit.Aspire.Hosting.Golang" Version="$(CommunityToolkitAspireVersion)" />
+      <PackageVersion Include="CommunityToolkit.Aspire.Hosting.Azure.DataApiBuilder" Version="$(CommunityToolkitAspireVersion)" />
       <!-- AspNetCore packages -->
       <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.6.2" />
       <!-- .NET packages -->
