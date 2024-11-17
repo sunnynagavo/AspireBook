@@ -24,7 +24,8 @@ builder.AddProject<Projects.WarehouseAPI>("warehouseapi")
     .WithReference(dab)
     .WaitFor(dab);
 
-builder.AddGolangApp("create-order", "../../create-order-api", 59511)
+builder.AddGolangApp("create-order", "../../create-order-api")
+    .WithHttpEndpoint(env: "PORT")
     .WithReference(dab)
     .WaitFor(dab);
 
