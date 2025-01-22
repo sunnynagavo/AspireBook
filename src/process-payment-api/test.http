@@ -1,0 +1,6 @@
+POST http://localhost:5002/api/process-payment
+Content-Type: application/json
+
+{
+    "OrderID": "1"
+}
