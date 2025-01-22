@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0-rc.1.24511.1" />
 
@@ -19,6 +19,7 @@
     <PackageReference Include="CommunityToolkit.Aspire.Hosting.Golang" />
     <PackageReference Include="CommunityToolkit.Aspire.Hosting.Azure.DataApiBuilder" />
     <PackageReference Include="CommunityToolkit.Aspire.Hosting.Python.Extensions" />
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.NodeJS.Extensions" />
   </ItemGroup>
 
   <ItemGroup>
