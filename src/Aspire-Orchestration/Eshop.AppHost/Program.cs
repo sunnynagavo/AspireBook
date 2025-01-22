@@ -26,6 +26,14 @@ var warehouseApi = builder.AddProject<Projects.WarehouseAPI>("warehouseapi")
     .WithReference(dab)
     .WaitFor(dab);
 
+builder.AddGolangApp("create-order", "../../create-order-api")
+    .WithHttpEndpoint(port: 5001, env: "PORT")
+    .WithReference(dab)
+    .WaitFor(dab);
+
+builder.AddUvApp("process-payment", "../../process-payment-api", "process-payment-api")
+    .WithHttpEndpoint(port: 5002, env: "PORT")
+
 var createorderApi = builder.AddGolangApp("create-order", "../../create-order-api")
     .WithHttpEndpoint(env: "PORT")
     .WithReference(dab)
