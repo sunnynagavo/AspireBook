@@ -1,3 +1,5 @@
+using Aspire.Hosting;
+
 var builder = DistributedApplication.CreateBuilder(args);
 
 // Add a SQL Server container
@@ -20,13 +22,26 @@ var dab = builder.AddDataAPIBuilder("dab", "../../../dab/dab-config.json")
     .WithReference(sqlDatabase)
     .WaitFor(sqlServer);
 
-builder.AddProject<Projects.WarehouseAPI>("warehouseapi")
+var warehouseApi = builder.AddProject<Projects.WarehouseAPI>("warehouseapi")
     .WithReference(dab)
     .WaitFor(dab);
 
-builder.AddGolangApp("create-order", "../../create-order-api")
+var createorderApi = builder.AddGolangApp("create-order", "../../create-order-api")
     .WithHttpEndpoint(env: "PORT")
     .WithReference(dab)
     .WaitFor(dab);
+
+// Add the React front-end project
+builder.AddNpmApp("FrontendWithReact", "../../FrontendWithReact/frontend-react-app")
+    .WithNpmPackageInstallation()
+    .WithReference(warehouseApi)
+    .WaitFor(warehouseApi)
+    .WithReference(createorderApi)
+    .WaitFor(createorderApi)
+    .WithHttpEndpoint(env: "PORT")
+    .WithEnvironment("BROWSER", "none") // Disable opening browser on npm start
+    .WithExternalHttpEndpoints()
+    .WaitFor(dab)
+    .PublishAsDockerFile();
 
 builder.Build().Run();
