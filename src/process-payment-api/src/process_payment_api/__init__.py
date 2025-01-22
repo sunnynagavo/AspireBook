@@ -1,23 +1,48 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 import uvicorn
 import os
 import requests
 
 app = FastAPI()
 
-@app.get("/api/process-payment")
-def process_payment(payload):
-    order_id = payload.get('OrderID')
+class PaymentPayload(BaseModel):
+    OrderID: str
+
+@app.post("/api/process-payment")
+def process_payment(payload: PaymentPayload):
+    order_id = payload.OrderID
     if not order_id:
-        raise ValueError("Payload must contain 'order_id'")
+        raise HTTPException(status_code=400, detail="Payload must contain 'OrderID'")
 
-    api_endpoint = os.environ.get("services__dab__http__0") + "/api/Orders"
-    url = f"{api_endpoint}/{order_id}"
-    data = {"Status": "processing"}
+    api_endpoint = os.environ.get("services__dab__http__0")
+    if not api_endpoint:
+        raise HTTPException(status_code=500, detail="Environment variable 'services__dab__http__0' is not set")
 
-    response = requests.put(url, json=data)
+    # Read the order with OrderID from the same endpoint
+    url = f"{api_endpoint}/api/Orders/OrderID/{order_id}"
+    response = requests.get(url)
     if response.status_code != 200:
-        raise Exception(f"Failed to update order status: {response.text}")
+        raise HTTPException(status_code=500, detail=f"Failed to retrieve order: {response.text}")
+
+    order_data = response.json()
+
+    # Extract the first item from the array
+    order_data = order_data["value"][0]
+
+    # Remove the OrderID field from the order data
+    if "OrderID" in order_data:
+        del order_data["OrderID"]
+    # Update the order data
+    order_data["Status"] = "processing"
+
+    # Print the updated order data for debug purposes
+    print("Updated order data:", order_data)
+
+    # Send the updated order data as an update request
+    response = requests.put(url, json=order_data)
+    if response.status_code != 200:
+        raise HTTPException(status_code=500, detail=f"Failed to update order status: {response.text}")
 
     return response.json()
 
