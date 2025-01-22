@@ -29,4 +29,9 @@ builder.AddGolangApp("create-order", "../../create-order-api")
     .WithReference(dab)
     .WaitFor(dab);
 
+builder.AddUvApp("process-payment", "../../process-payment-api", "process-payment-api")
+    .WithHttpEndpoint(env: "PORT")
+    .WithReference(dab)
+    .WaitFor(dab);
+
 builder.Build().Run();

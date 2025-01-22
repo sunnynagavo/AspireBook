@@ -9,6 +9,7 @@
     <Nullable>enable</Nullable>
     <IsAspireHost>true</IsAspireHost>
     <UserSecretsId>42534081-c920-4a7c-9716-a23d8cb0c4a1</UserSecretsId>
+    <NoWarn>$(NoWarn);ASPIREHOSTINGPYTHON001</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +18,7 @@
     <PackageReference Include="Aspire.Hosting.SqlServer" />
     <PackageReference Include="CommunityToolkit.Aspire.Hosting.Golang" />
     <PackageReference Include="CommunityToolkit.Aspire.Hosting.Azure.DataApiBuilder" />
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.Python.Extensions" />
   </ItemGroup>
 
   <ItemGroup>
