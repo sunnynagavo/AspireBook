@@ -33,6 +33,7 @@ var createorderApi = builder.AddGolangApp("create-order", "../../create-order-ap
 
 // Add the React front-end project
 builder.AddNpmApp("FrontendWithReact", "../../FrontendWithReact/frontend-react-app")
+    .WithNpmPackageInstallation()
     .WithReference(warehouseApi)
     .WaitFor(warehouseApi)
     .WithReference(createorderApi)

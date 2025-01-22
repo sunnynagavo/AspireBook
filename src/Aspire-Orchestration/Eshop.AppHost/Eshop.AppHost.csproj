@@ -17,6 +17,7 @@
     <PackageReference Include="Aspire.Hosting.SqlServer" />
     <PackageReference Include="CommunityToolkit.Aspire.Hosting.Golang" />
     <PackageReference Include="CommunityToolkit.Aspire.Hosting.Azure.DataApiBuilder" />
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.NodeJS.Extensions" />
   </ItemGroup>
 
   <ItemGroup>
