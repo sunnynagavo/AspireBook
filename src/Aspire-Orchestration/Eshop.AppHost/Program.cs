@@ -31,8 +31,9 @@ builder.AddGolangApp("create-order", "../../create-order-api")
     .WithReference(dab)
     .WaitFor(dab);
 
-builder.AddUvApp("process-payment", "../../process-payment-api", "process-payment-api")
-    .WithHttpEndpoint(port: 5002, env: "PORT")
+// Replace the line causing the error with the correct method call
+//builder.AddUvApp("process-payment", "../../process-payment-api")
+//    .WithHttpEndpoint(port: 5002, env: "PORT");
 
 var createorderApi = builder.AddGolangApp("create-order", "../../create-order-api")
     .WithHttpEndpoint(env: "PORT")
