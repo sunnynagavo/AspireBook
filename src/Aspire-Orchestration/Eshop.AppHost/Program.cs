@@ -49,6 +49,10 @@ builder.AddNpmApp("FrontendWithReact", "../../FrontendWithReact/frontend-react-a
     .WaitFor(warehouseApi)
     .WithReference(createOrderApi)
     .WaitFor(createOrderApi)
+    .WithReference(processPaymentApi)
+    .WaitFor(processPaymentApi)
+    .WithReference(shippingApi)
+    .WaitFor(shippingApi)
     .WithHttpEndpoint(env: "PORT")
     .WithEnvironment("BROWSER", "none") // Disable opening browser on npm start
     .WithExternalHttpEndpoints()
