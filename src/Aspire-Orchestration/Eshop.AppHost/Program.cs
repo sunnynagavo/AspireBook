@@ -31,9 +31,16 @@ var createOrderApi = builder.AddGolangApp("create-order", "../../create-order-ap
     .WithReference(dab)
     .WaitFor(dab);
 
-// Replace the line causing the error with the correct method call
-//builder.AddUvApp("process-payment", "../../process-payment-api")
-//    .WithHttpEndpoint(port: 5002, env: "PORT");
+var processPaymentApi = builder.AddUvApp("process-payment", "../../process-payment-api", "process-payment-api")
+    .WithHttpEndpoint(port: 5002, env: "PORT")
+    .WithReference(dab)
+    .WaitFor(dab);
+
+var shippingApi = builder.AddNodeApp("ship-api", "index.js", "../../shipping-api/src")
+    .WithNpmPackageInstallation()
+    .WithHttpEndpoint(port: 5003, env: "PORT")
+    .WithReference(dab)
+    .WaitFor(dab);
 
 // Add the React front-end project
 builder.AddNpmApp("FrontendWithReact", "../../FrontendWithReact/frontend-react-app")

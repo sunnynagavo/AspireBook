@@ -1,0 +1,6 @@
+POST http://localhost:5003/api/ship-product
+Content-Type: application/json
+
+{
+    "OrderID": "3"
+}

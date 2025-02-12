@@ -3,6 +3,7 @@ from pydantic import BaseModel
 import uvicorn
 import os
 import requests
+from datetime import datetime
 
 app = FastAPI()
 
@@ -35,6 +36,7 @@ def process_payment(payload: PaymentPayload):
         del order_data["OrderID"]
     # Update the order data
     order_data["Status"] = "processing"
+    order_data["LastUpdated"] = datetime.utcnow().isoformat()
 
     # Print the updated order data for debug purposes
     print("Updated order data:", order_data)
