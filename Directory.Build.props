@@ -9,6 +9,7 @@
   
       <AspireVersion>9.0.0</AspireVersion>
       <CommunityToolkitAspireVersion>9.1.0</CommunityToolkitAspireVersion>
+      <CommunityToolkitAspireVersionBeta>9.1.1-beta.176</CommunityToolkitAspireVersionBeta>
       <AspNetCoreVersion>8.0.7</AspNetCoreVersion>
       <OpenTelemetryVersion>1.9.0</OpenTelemetryVersion>
   
