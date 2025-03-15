@@ -1,4 +1,4 @@
-POST http://localhost:5002/api/process-payment
+POST http://localhost:3601/v1.0/publish/pubsub/process-payment
 Content-Type: application/json
 
 {

@@ -1,6 +1,6 @@
-POST http://localhost:5003/api/ship-product
+POST http://localhost:3601/v1.0/publish/pubsub/ship-order
 Content-Type: application/json
 
 {
-    "OrderID": "3"
+    "OrderID": "1"
 }

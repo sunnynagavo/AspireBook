@@ -3,13 +3,16 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"io/ioutil"
 	"log"
 	"main/otelx"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 
+	dapr "github.com/dapr/go-sdk/client"
 	"github.com/gin-gonic/gin"
 	"go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
 	"go.opentelemetry.io/otel"
@@ -87,6 +90,44 @@ func setupRouter() *gin.Engine {
 		}
 
 		c.JSON(http.StatusCreated, gin.H{"status": "order created"})
+
+		daprClient, err := dapr.NewClient()
+		if err != nil {
+			panic(err)
+		}
+		defer daprClient.Close()
+		//Using Dapr SDK to publish a topic
+		body, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			return
+		}
+
+		var response struct {
+			Value []struct {
+				OrderID int `json:"OrderID"`
+			} `json:"value"`
+		}
+
+		if err := json.Unmarshal(body, &response); err != nil {
+			return
+		}
+
+		if len(response.Value) == 0 {
+			return
+		}
+
+		orderID := strconv.Itoa(response.Value[0].OrderID)
+		log.Printf("Order ID: %s", orderID)
+		ctx := context.Background()
+		payload := map[string]string{"OrderID": orderID}
+		payloadBytes, err := json.Marshal(payload)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to marshal payload"})
+			return
+		}
+		if err := daprClient.PublishEvent(ctx, "pubsub", "process-payment", payloadBytes); err != nil {
+			panic(err)
+		}
 	})
 
 	return r

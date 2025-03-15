@@ -1,18 +1,25 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import Body, FastAPI, HTTPException
+from dapr.clients import DaprClient
+from dapr.ext.fastapi import DaprApp
 from pydantic import BaseModel
 import uvicorn
 import os
 import requests
+import json
 from datetime import datetime
 
 app = FastAPI()
+dapr_app = DaprApp(app)
 
 class PaymentPayload(BaseModel):
     OrderID: str
-
+    
+@dapr_app.subscribe(pubsub='pubsub', topic='process-payment')
 @app.post("/api/process-payment")
-def process_payment(payload: PaymentPayload):
-    order_id = payload.OrderID
+def process_payment(event_data = Body()):
+    print("Received event data:", event_data)
+    data = event_data.get("data")
+    order_id = data.get("OrderID")
     if not order_id:
         raise HTTPException(status_code=400, detail="Payload must contain 'OrderID'")
 
@@ -45,6 +52,17 @@ def process_payment(payload: PaymentPayload):
     response = requests.put(url, json=order_data)
     if response.status_code != 200:
         raise HTTPException(status_code=500, detail=f"Failed to update order status: {response.text}")
+
+    PUBSUB_NAME = 'pubsub'
+    TOPIC_NAME = 'ship-order'
+    with DaprClient() as client:
+        #Using Dapr SDK to publish a topic
+        result = client.publish_event(
+            pubsub_name=PUBSUB_NAME,
+            topic_name=TOPIC_NAME,
+            data=json.dumps({"OrderID": order_id}),
+            data_content_type='application/json',
+        )
 
     return response.json()
 

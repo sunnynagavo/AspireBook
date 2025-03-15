@@ -5,7 +5,7 @@ description = "Process Payment API project"
 authors = [
     { name = "Tommaso Stocchi", email = "tstocchi@microsoft.com" }
 ]
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = [
     "fastapi>=0.115.6",
     "requests>=2.32.3",
