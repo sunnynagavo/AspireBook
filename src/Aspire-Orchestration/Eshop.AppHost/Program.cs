@@ -27,20 +27,23 @@ var warehouseApi = builder.AddProject<Projects.WarehouseAPI>("warehouseapi")
     .WaitFor(dab);
 
 var createOrderApi = builder.AddGolangApp("create-order", "../../create-order-api")
-    .WithHttpEndpoint(port: 5001, env: "PORT")
+    .WithHttpEndpoint(env: "PORT")
     .WithReference(dab)
-    .WaitFor(dab);
+    .WaitFor(dab)
+    .PublishAsDockerFile();
 
 var processPaymentApi = builder.AddUvApp("process-payment", "../../process-payment-api", "process-payment-api")
-    .WithHttpEndpoint(port: 5002, env: "PORT")
+    .WithHttpEndpoint(env: "PORT")
     .WithReference(dab)
-    .WaitFor(dab);
+    .WaitFor(dab)
+    .PublishAsDockerFile();
 
 var shippingApi = builder.AddNodeApp("ship-api", "index.js", "../../shipping-api/src")
     .WithNpmPackageInstallation()
-    .WithHttpEndpoint(port: 5003, env: "PORT")
+    .WithHttpEndpoint(env: "PORT")
     .WithReference(dab)
-    .WaitFor(dab);
+    .WaitFor(dab)
+    .PublishAsDockerFile();
 
 // Add the React front-end project
 builder.AddNpmApp("FrontendWithReact", "../../FrontendWithReact/frontend-react-app")
