@@ -16,9 +16,6 @@ COPY . .
 # Build the application
 RUN go build -o main .
 
-# Set the PORT environment variable
-ENV PORT=8000
-
 # Expose port 8000
 EXPOSE 8000
 
