@@ -38,7 +38,7 @@ var processPaymentApi = builder.AddUvApp("process-payment", "../../process-payme
     .WaitFor(dab)
     .PublishAsDockerFile();
 
-var shippingApi = builder.AddNodeApp("ship-api", "index.js", "../../shipping-api/src")
+var shippingApi = builder.AddNodeApp("ship-api", "src/index.js", "../../shipping-api")
     .WithNpmPackageInstallation()
     .WithHttpEndpoint(env: "PORT")
     .WithReference(dab)
@@ -46,7 +46,7 @@ var shippingApi = builder.AddNodeApp("ship-api", "index.js", "../../shipping-api
     .PublishAsDockerFile();
 
 // Add the React front-end project
-builder.AddNpmApp("FrontendWithReact", "../../FrontendWithReact/frontend-react-app")
+builder.AddNpmApp("frontend-react-app", "../../FrontendWithReact/frontend-react-app")
     .WithNpmPackageInstallation()
     .WithReference(warehouseApi)
     .WaitFor(warehouseApi)
