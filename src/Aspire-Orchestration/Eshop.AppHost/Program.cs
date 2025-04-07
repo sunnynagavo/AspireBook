@@ -30,29 +30,32 @@ var warehouseApi = builder.AddProject<Projects.WarehouseAPI>("warehouseapi")
     .WaitFor(dab);
 
 var createOrderApi = builder.AddGolangApp("create-order", "../../create-order-api")
-    .WithHttpEndpoint(port: 5001, env: "PORT")
+    .WithHttpEndpoint(env: "PORT")
     .WithReference(dab)
     .WaitFor(dab)
     .WithDaprSidecar(new DaprSidecarOptions(){ AppPort = 5001, AppId = "create-order" })
     .WithReference(pubusb);
+    .PublishAsDockerFile();
 
 var processPaymentApi = builder.AddUvApp("process-payment", "../../process-payment-api", "process-payment-api")
-    .WithHttpEndpoint(port: 5002, env: "PORT")
+    .WithHttpEndpoint(env: "PORT")
     .WithReference(dab)
     .WaitFor(dab)
     .WithDaprSidecar(new DaprSidecarOptions(){ AppPort = 5002, AppId = "process-payment" })
     .WithReference(pubusb);
+    .PublishAsDockerFile();
 
-var shippingApi = builder.AddNodeApp("ship-api", "index.js", "../../shipping-api/src")
+var shippingApi = builder.AddNodeApp("ship-api", "src/index.js", "../../shipping-api")
     .WithNpmPackageInstallation()
-    .WithHttpEndpoint(port: 5003, env: "PORT")
+    .WithHttpEndpoint(env: "PORT")
     .WithReference(dab)
     .WaitFor(dab)
     .WithDaprSidecar(new DaprSidecarOptions(){ AppPort = 5003, AppId = "shipping-api" })
     .WithReference(pubusb);
+    .PublishAsDockerFile();
 
 // Add the React front-end project
-builder.AddNpmApp("FrontendWithReact", "../../FrontendWithReact/frontend-react-app")
+builder.AddNpmApp("frontend-react-app", "../../FrontendWithReact/frontend-react-app")
     .WithNpmPackageInstallation()
     .WithReference(warehouseApi)
     .WaitFor(warehouseApi)
