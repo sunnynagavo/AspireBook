@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshop.AppHost", "src\Aspire
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshop.ServiceDefaults", "src\Aspire-Orchestration\Eshop.ServiceDefaults\Eshop.ServiceDefaults.csproj", "{A099D9B6-7943-42C2-A167-2CA840D09485}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseAPI.Tests", "WarehouseAPI.Tests\WarehouseAPI.Tests.csproj", "{5BC75512-E16E-4CD5-B4AB-5C714591FFDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A099D9B6-7943-42C2-A167-2CA840D09485}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A099D9B6-7943-42C2-A167-2CA840D09485}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A099D9B6-7943-42C2-A167-2CA840D09485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BC75512-E16E-4CD5-B4AB-5C714591FFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BC75512-E16E-4CD5-B4AB-5C714591FFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BC75512-E16E-4CD5-B4AB-5C714591FFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BC75512-E16E-4CD5-B4AB-5C714591FFDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
