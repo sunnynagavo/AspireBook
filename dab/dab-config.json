@@ -15,6 +15,9 @@
           "origins": [],
           "allow-credentials": false
         },
+        "authentication": {
+          "provider": "StaticWebApps"
+        },
         "mode": "development"
       }
     },

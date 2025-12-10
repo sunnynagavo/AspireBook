@@ -1,19 +1,19 @@
 <Project>
-    <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
-    <PropertyGroup>
-      <TargetFramework>net8.0</TargetFramework>
-      <LangVersion>latest</LangVersion>
+  <!-- See https://aka.ms/dotnet/msbuild/customize for more details on customizing your build -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
   
-      <ImplicitUsings>enable</ImplicitUsings>
-      <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   
-      <AspireVersion>9.0.0</AspireVersion>
-      <CommunityToolkitAspireVersion>9.1.0</CommunityToolkitAspireVersion>
-      <CommunityToolkitAspireVersionBeta>9.1.1-beta.176</CommunityToolkitAspireVersionBeta>
-      <AspNetCoreVersion>8.0.7</AspNetCoreVersion>
-      <OpenTelemetryVersion>1.9.0</OpenTelemetryVersion>
+      <AspireVersion>9.2.0</AspireVersion>
+      <CommunityToolkitAspireVersion>9.3.0</CommunityToolkitAspireVersion>
+      <CommunityToolkitAspireVersionBeta>9.4.1-beta.291</CommunityToolkitAspireVersionBeta>
+    <AspNetCoreVersion>10.0.0</AspNetCoreVersion>
+    <OpenTelemetryVersion>1.9.0</OpenTelemetryVersion>
   
-      <IsPackable>false</IsPackable>
-  </PropertyGroup>
-  </Project>
+    <IsPackable>false</IsPackable>
+</PropertyGroup>
+</Project>
   
