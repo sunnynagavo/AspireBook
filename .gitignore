@@ -352,3 +352,4 @@ MigrationBackup/
 dist/
 site/
 .azure
+/install-azd.ps1
