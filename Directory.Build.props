@@ -7,9 +7,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   
-      <AspireVersion>9.2.0</AspireVersion>
-      <CommunityToolkitAspireVersion>9.3.0</CommunityToolkitAspireVersion>
-      <CommunityToolkitAspireVersionBeta>9.4.1-beta.291</CommunityToolkitAspireVersionBeta>
+      <!-- Core Aspire first-party packages (latest available in the 13.x line) -->
+      <AspireVersion>13.4.6</AspireVersion>
+      <!-- Aspire.Hosting.NodeJS has no 13.x release; latest is 9.5.2 -->
+      <AspireNodeJsVersion>9.5.2</AspireNodeJsVersion>
+      <!-- CommunityToolkit packages aligned to the Aspire 13.x line (stable) -->
+      <CommunityToolkitAspireVersion>13.4.0</CommunityToolkitAspireVersion>
+      <!-- CommunityToolkit NodeJS.Extensions has no stable 13.x; latest stable is 9.9.0 -->
+      <CommunityToolkitAspireNodeJsVersion>9.9.0</CommunityToolkitAspireNodeJsVersion>
     <AspNetCoreVersion>10.0.0</AspNetCoreVersion>
     <OpenTelemetryVersion>1.9.0</OpenTelemetryVersion>
   
