@@ -5,14 +5,14 @@
   <ItemGroup>
     <!-- Aspire packages -->
     <PackageVersion Include="Aspire.Hosting" Version="$(AspireVersion)" />
-    <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.0.0" />
-    <PackageVersion Include="Aspire.Hosting.NodeJS" Version="9.5.2" />
-    <PackageVersion Include="Aspire.Hosting.Redis" Version="13.0.0" />
-    <PackageVersion Include="Aspire.Hosting.SqlServer" Version="13.0.0" />
+    <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
+    <PackageVersion Include="Aspire.Hosting.NodeJS" Version="$(AspireNodeJsVersion)" />
+    <PackageVersion Include="Aspire.Hosting.Redis" Version="$(AspireVersion)" />
+    <PackageVersion Include="Aspire.Hosting.SqlServer" Version="$(AspireVersion)" />
     <PackageVersion Include="CommunityToolkit.Aspire.Hosting.Golang" Version="$(CommunityToolkitAspireVersion)" />
     <PackageVersion Include="CommunityToolkit.Aspire.Hosting.Azure.DataApiBuilder" Version="$(CommunityToolkitAspireVersion)" />
-    <PackageVersion Include="CommunityToolkit.Aspire.Hosting.Python.Extensions" Version="$(CommunityToolkitAspireVersionBeta)" />
-    <PackageVersion Include="CommunityToolkit.Aspire.Hosting.NodeJS.Extensions" Version="$(CommunityToolkitAspireVersion)" />
+    <PackageVersion Include="CommunityToolkit.Aspire.Hosting.Python.Extensions" Version="$(CommunityToolkitAspireVersion)" />
+    <PackageVersion Include="CommunityToolkit.Aspire.Hosting.NodeJS.Extensions" Version="$(CommunityToolkitAspireNodeJsVersion)" />
     <!-- AspNetCore packages -->
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     <!-- .NET packages -->
